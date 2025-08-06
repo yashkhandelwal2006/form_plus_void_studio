@@ -1,0 +1,152 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  background: #111; /* solid black */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c8a951; /* gold text for main content */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Main container */
+.container {
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 12px #c8a95188);
+}
+
+/* Name */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #c8a951;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+/* Tagline */
+p.tagline {
+  font-size: 1.2rem;
+  color: #eaeaea; /* Light gray for contrast */
+  margin-bottom: 40px;
+}
+
+/* Coming soon text */
+.coming-soon {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #c8a951;
+  margin-bottom: 50px;
+  transition: transform 0.5s ease;
+}
+.coming-soon.animate {
+  transform: scale(1.1);
+  color: #c8a951;
+}
+
+/* Contact button */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111; /* Black text */
+  background-color: #c8a951; /* Gold background */
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #c8a95133;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.btn:hover {
+  background-color: #111; /* Black hover */
+  color: #c8a951; /* Gold text on hover */
+  transform: scale(1.05);
+}
+
+/* Subtle footer */
+footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.8rem;
+  color: #777; /* Gray footer text */
+  width: 100%;
+  text-align: center;
+}
+
+/* Logo block animation */
+#logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: logo-center 1.2s cubic-bezier(.77,0,.175,1) forwards;
+}
+
+@keyframes logo-center {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-80px) scale(1);
+  }
+}
+
+/* Content block reveal */
+#content-block {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1);
+  text-align: center;
+}
+
+#content-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  p.tagline {
+    font-size: 1rem;
+  }
+  .coming-soon {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
